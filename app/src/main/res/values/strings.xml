@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Lekcja17_FormularzePrzygotowanieDoKartkowki</string>
+    <string-array name="genres">
+        <item>Thriller</item>
+        <item>Romans</item>
+        <item>Fantastyka</item>
+        <item>Sci-Fi</item>
+        <item>Horror</item>
+        <item>Kryminał</item>
+        <item>Przygodowy</item>
+        <item>Historyczny</item>
+        <item>Dla dzieci</item>
+        <item>Rozwojowa</item>
+    </string-array>
 </resources>
