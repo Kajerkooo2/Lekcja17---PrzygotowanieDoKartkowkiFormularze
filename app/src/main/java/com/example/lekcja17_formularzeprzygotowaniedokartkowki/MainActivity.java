@@ -144,7 +144,19 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, "Dodane", Toast.LENGTH_SHORT).show();
     }
 
-    private void clearForm(){
-
+    private void clearForm() {
+        editTitle.setText("");
+        editAuthor.setText("");
+        editPrice.setText("");
+        spinnerGenre.setSelection(0);
+        switchNew.setChecked(false);
+        seekBarPromo.setProgress(0);
+        textPromoValue.setText("0%");
+        checkPaper.setChecked(false);
+        checkMobi.setChecked(false);
+        checkAudiobook.setChecked(false);
+        checkPdf.setChecked(false);
+        radioGroupAge.clearCheck();
+        radioGroupAge2.clearCheck();
     }
 }
