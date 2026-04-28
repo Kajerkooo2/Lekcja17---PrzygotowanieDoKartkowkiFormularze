@@ -52,6 +52,30 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+
+        initializeViews();
+
+        // SeekBar listener
+        seekBarPromo.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                textPromoValue.setText(progress + "%");
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {}
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {}
+        });
+
+        // Button listener
+        buttonSubmit.setOnClickListener(v -> submitForm());
+
+        // Adapter dla ListView
+        bookAdapter = new BookAdapter(this, bookList);
+        listViewBooks.setAdapter(bookAdapter);
     }
     private void initializeViews() {
         editTitle = findViewById(R.id.etTytul);
@@ -73,5 +97,54 @@ public class MainActivity extends AppCompatActivity {
         radio0 = findViewById(R.id.radio0);
         buttonSubmit = findViewById(R.id.btnWyslij);
         listViewBooks = findViewById(R.id.lvBooks);
+    }
+
+    private void submitForm(){
+        if (editTitle.getText().toString().trim().isEmpty()) {
+            Toast.makeText(this, "Wpisz tytuł", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (editAuthor.getText().toString().trim().isEmpty()) {
+            Toast.makeText(this, "Wpisz autora", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (editPrice.getText().toString().trim().isEmpty()) {
+            Toast.makeText(this, "Wpisz cenę", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+
+        String title = editTitle.getText().toString();
+        String author = editAuthor.getText().toString();
+        String genre = spinnerGenre.getSelectedItem().toString();
+        boolean isNew = switchNew.isChecked();
+        double price = Double.parseDouble(editPrice.getText().toString());
+        int promo = seekBarPromo.getProgress();
+
+        StringBuilder available = new StringBuilder();
+        if (checkPaper.isChecked()) available.append("Papier ");
+        if (checkMobi.isChecked()) available.append("Mobi ");
+        if (checkAudiobook.isChecked()) available.append("Audiobook ");
+        if (checkPdf.isChecked()) available.append("PDF ");
+
+        String ageCategory = "";
+        if (radio18.isChecked()) ageCategory = "18+";
+        else if (radio12.isChecked()) ageCategory = "12+";
+        else if (radio9.isChecked()) ageCategory = "9+";
+        else if (radio0.isChecked()) ageCategory = "0+";
+
+        Book book = new Book(title, author, genre, isNew, price, promo,
+                available.toString().trim(), ageCategory);
+
+        bookList.add(0, book);
+        bookAdapter.notifyDataSetChanged();
+
+        clearForm();
+
+        Toast.makeText(this, "Dodane", Toast.LENGTH_SHORT).show();
+    }
+
+    private void clearForm(){
+
     }
 }
