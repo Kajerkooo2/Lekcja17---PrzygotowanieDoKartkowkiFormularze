@@ -3,259 +3,253 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp">
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Książka:"
-        android:textStyle="bold"
-        android:textSize="16sp"
-        android:layout_marginTop="12dp" />
-
-    <EditText
-        android:id="@+id/etTytul"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Tytuł"
-        android:inputType="text"
-        android:layout_marginTop="8dp"
-        android:padding="12dp" />
-
-    <EditText
-        android:id="@+id/etAutor"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Autor"
-        android:inputType="text"
-        android:layout_marginTop="8dp"
-        android:padding="12dp" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Gatunki nr.:"
-        android:textSize="14sp"
-        android:layout_marginBottom="8dp" />
-
-    <Spinner
-        android:id="@+id/spinnerGenre"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:entries="@array/genres"
-        android:layout_marginBottom="16dp" />
 
     <LinearLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:layout_marginTop="16dp">
+        android:orientation="vertical"
+        tools:context=".MainActivity">
 
-        <Switch
-            android:id="@+id/switchCzNowa"
+        <TextView
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Książka:"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="12dp" />
+
+        <EditText
+            android:id="@+id/etTytul"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tytuł"
+            android:inputType="text"
+            android:layout_marginTop="8dp"
+            android:padding="12dp" />
+
+        <EditText
+            android:id="@+id/etAutor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Autor"
+            android:inputType="text"
+            android:layout_marginTop="8dp"
+            android:padding="12dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Gatunki nr.:"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp" />
+
+        <Spinner
+            android:id="@+id/spinnerGenre"
+            android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:text="Czy nowa" />
-    </LinearLayout>
+            android:entries="@array/genres"
+            android:layout_marginBottom="16dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cena:"
-        android:textStyle="bold"
-        android:textSize="14sp"
-        android:layout_marginTop="16dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="16dp">
 
-    <EditText
-        android:id="@+id/etCena"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Cena"
-        android:inputType="numberDecimal"
-        android:layout_marginTop="8dp"
-        android:padding="12dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Promocja:"
-        android:textStyle="bold"
-        android:textSize="14sp"
-        android:layout_marginTop="16dp" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:layout_marginTop="8dp">
+            <Switch
+                android:id="@+id/switchCzNowa"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="Czy nowa" />
+        </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0%"
-            android:layout_marginEnd="8dp" />
+            android:text="Cena:"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_marginTop="16dp" />
 
-        <SeekBar
-            android:id="@+id/seekBarPromocja"
-            android:layout_width="0dp"
+        <EditText
+            android:id="@+id/etCena"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:max="90"
-            android:progress="0" />
+            android:hint="Cena"
+            android:inputType="numberDecimal"
+            android:layout_marginTop="8dp"
+            android:padding="12dp" />
 
         <TextView
-            android:id="@+id/tvPromoPercent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="90%"
-            android:layout_marginStart="8dp" />
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Dostępne na:"
-        android:textStyle="bold"
-        android:textSize="14sp"
-        android:layout_marginTop="16dp" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="8dp">
+            android:text="Promocja:"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_marginTop="16dp" />
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="8dp">
 
-            <CheckBox
-                android:id="@+id/cbPapier"
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Papier" />
+                android:text="0%"
+                android:layout_marginEnd="8dp" />
 
-            <CheckBox
-                android:id="@+id/cbAudiobook"
+            <SeekBar
+                android:id="@+id/seekBarPromocja"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:max="90"
+                android:progress="0" />
+
+            <TextView
+                android:id="@+id/tvPromoPercent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Audiobook" />
+                android:text="90%"
+                android:layout_marginStart="8dp" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="0dp"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <CheckBox
-                android:id="@+id/cbMobi"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mobi" />
-
-            <CheckBox
-                android:id="@+id/cbPdf"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="PDF" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Kategoria wiekowa:"
-        android:textStyle="bold"
-        android:textSize="14sp"
-        android:layout_marginTop="16dp" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="8dp">
+            android:text="Dostępne na:"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_marginTop="16dp" />
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
 
-            <RadioGroup
-                android:id="@+id/rgKategoriaWiekowa"
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:orientation="vertical">
 
-                <RadioButton
-                    android:id="@+id/rb18"
+                <CheckBox
+                    android:id="@+id/cbPapier"
                     android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Papier" />
+
+                <CheckBox
+                    android:id="@+id/cbAudiobook"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Audiobook" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/cbMobi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mobi" />
+
+                <CheckBox
+                    android:id="@+id/cbPdf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PDF" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kategoria wiekowa:"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_marginTop="16dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <RadioGroup
+                android:id="@+id/radioGroupAge"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <RadioButton
+                    android:id="@+id/radio18"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="18+" />
 
                 <RadioButton
-                    android:id="@+id/rb12"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/radio12"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="12+" />
             </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/radioGroupAge2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <RadioButton
+                    android:id="@+id/radio9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="9+" />
+
+                <RadioButton
+                    android:id="@+id/radio0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="0+" />
+            </RadioGroup>
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="0dp"
+        <Button
+            android:id="@+id/btnWyslij"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginTop="24dp"
+            android:padding="16dp"
+            android:text="Wyslij"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:text="Lista View"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_marginTop="24dp" />
 
-            <RadioButton
-                android:id="@+id/rb9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="9+" />
+        <ListView
+            android:id="@+id/lvBooks"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_marginTop="12dp" />
 
-            <RadioButton
-                android:id="@+id/rb0"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0+" />
-        </LinearLayout>
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btnWyslij"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginTop="24dp"
-        android:padding="16dp"
-        android:text="Wyslij"
-        android:height="32dp"
-        android:textSize="16dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Lista View"
-        android:textStyle="bold"
-        android:textSize="14sp"
-        android:layout_marginTop="24dp" />
-
-    <ListView
-        android:id="@+id/lvBooks"
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:layout_marginTop="12dp" />
-
-</LinearLayout>
 </ScrollView>
